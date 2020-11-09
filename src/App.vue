@@ -1,28 +1,42 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div id="app">
+        <el-menu :default-active="activeMenu"
+                 router
+                 mode="horizontal"
+                 background-color="#545c64"
+                 text-color="#fff"
+                 active-text-color="#ffd04b">
+            <el-menu-item index="home">Главная страница</el-menu-item>
+            <el-menu-item index="info">Информация о сборке</el-menu-item>
+        </el-menu>
+        <router-view />
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+    export default {
+        name: 'App',
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+        data: () => ({
+            activeMenu: null,
+        }),
+
+        computed: {
+            routeName() {
+                return this.$route.name;
+            }
+        },
+
+        watch: {
+            routeName(val) {
+                this.activeMenu = val;
+            }
+        },
+
+        mounted() {
+            this.activeMenu = this.routeName;
+        }
+    }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<style src="@styles/style.scss" lang="scss" />

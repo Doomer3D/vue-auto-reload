@@ -1,0 +1,40 @@
+$dl-padding: 8px 12px;
+
+.tools-block {
+    margin: 16px 0;
+
+    & dl {
+        display: flex;
+        flex-flow: row wrap;
+        border: solid #333;
+        border-width: 1px 1px 0 0;
+        font-size: large;
+    }
+
+    & dt {
+        flex-basis: 20%;
+        padding: $dl-padding;
+        background: #333;
+        text-align: right;
+        color: #fff;
+    }
+
+    & dd {
+        flex-basis: 70%;
+        flex-grow: 1;
+        margin: 0;
+        padding: $dl-padding;
+        border-bottom: 1px solid #333;
+    }
+}
+
+.tools-date-info {
+    & i:nth-child(2) {
+        margin-left: 8px;
+    }
+
+    & .ago {
+        margin-left: 8px;
+        color: forestgreen;
+    }
+}

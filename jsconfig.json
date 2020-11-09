@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "baseUrl": ".",
+        "paths": {
+            "@/*": [ "./src/*" ],
+            "@components/*": [ "./src/components/*" ],
+            "@images/*": [ "./src/images/*" ],
+            "@router/*": [ "./src/router/*" ],
+            "@store/*": [ "./src/store/*" ],
+            "@styles/*": [ "./src/styles/*" ],
+            "@utils/*": [ "./src/utils/*" ],
+            "@views/*": [ "./src/views/*" ]
+        }
+    },
+    "exclude": [ "node_modules" ]
+}
