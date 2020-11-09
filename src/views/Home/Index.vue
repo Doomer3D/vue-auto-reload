@@ -12,7 +12,8 @@
         <p>
             <el-button @click="resetVersion"
                        type="danger"
-                       size="medium">
+                       size="medium"
+                       :loading="resetting">
                 Сбросить версию сборки
             </el-button>
         </p>
@@ -26,11 +27,16 @@
 
 <script>
     export default {
+        data: () => ({
+            resetting: false,
+        }),
+
         methods: {
             /** сбросить версию сборки */
             resetVersion() {
                 if (this.$autoReload?.lastVersion) {
                     this.$autoReload.lastVersion.BundleVersion = '2020-01-01T00:00:00.000Z';
+                    this.resetting = true;
                 }
             }
         },
