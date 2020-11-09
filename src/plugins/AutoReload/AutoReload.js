@@ -68,6 +68,12 @@ export default class AutoReload {
         if (this.lastVersion.BundleVersion != version.BundleVersion) {
             // версия сборки изменилась
 
+            // останавливаем таймер
+            if (this.timer) {
+                clearInterval(this.timer);
+                this.timer = null;
+            }
+
             if (this.config.Notification) {
                 // показываем уведомление об обновлении
                 await this.vm.$alert(this.config.NotificationMessage, 'Предупреждение', {

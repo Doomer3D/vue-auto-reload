@@ -20,6 +20,7 @@
         <h2>Ссылки</h2>
         <p>Статья на хабре: <a href="https://habr.com/ru/post/527026/" target="_blank">Автоматическое обновление скриптов после деплоя</a></p>
         <p>Исходники на github: <a href="https://github.com/Doomer3D/vue-auto-reload" target="_blank">https://github.com/Doomer3D/vue-auto-reload</a></p>
+        <p>Другая интересная статья: <a href="https://habr.com/ru/post/453642/" target="_blank">Умный парсер числа, записанного прописью</a></p>
     </div>
 </template>
 
